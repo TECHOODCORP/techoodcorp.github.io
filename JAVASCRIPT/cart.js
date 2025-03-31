@@ -77,8 +77,6 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
-        showNotification(`Payment Successful with ${paymentMethod.value}!`);
-
         let selectedItems = document.querySelectorAll(".item-checkbox:checked");
         let updatedCart = cartItems.filter((_, index) => {
             return ![...selectedItems].some(item => parseInt(item.getAttribute("data-index")) === index);
