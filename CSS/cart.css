@@ -1,0 +1,258 @@
+.section-title {
+    text-align: center;
+    color: #003366;
+    margin-top: 120px; 
+}
+
+.section-title::after {
+    content: "";
+    display: block;
+    width: 150px; 
+    height: 4px; 
+    margin: 8px auto 0; 
+    background: linear-gradient(90deg, rgba(6, 6, 6, 0.5), rgba(0, 74, 173, 0.5));
+    border-radius: 2px;
+    margin-bottom: 20px;
+}
+
+/* Root Colors */
+:root {
+    --primary-color: #003366;  /* Dark Blue */
+    --secondary-color: #004aad; /* Bright Blue */
+    --accent-color: rgba(0, 74, 173, 0.5);
+    --text-color: white;
+    --success-color: #ffffff;
+    --button-hover-scale: 1.05;
+}
+
+/* Shopping Cart Item */
+.cart-item {
+    display: flex;
+    align-items: center;
+    background: var(--text-color);
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+}
+
+.cart-item:hover {
+    transform: scale(1.02);
+}
+
+.cart-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+.cart-details {
+    flex-grow: 1;
+}
+
+.cart-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.cart-price, .cart-quantity, .cart-total {
+    margin: 5px 0;
+}
+
+/* Checkbox Styling */
+.item-checkbox {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+/* Total Container */
+.total-container {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Checkout Button */
+#checkout-btn {
+    font-size: 18px;
+    padding: 10px 20px;
+    background: linear-gradient(90deg, rgba(6, 6, 6, 0.5), rgba(0, 74, 173, 0.5));
+    color: white;
+    border: none;
+    box-shadow: 0px 4px 10px rgba(0, 74, 173, 0.4);
+    transition: transform 0.2s ease-in-out, box-shadow 0.3s ease;
+}
+
+/* Hover Effect */
+#checkout-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 6px 14px rgba(0, 74, 173, 0.6);
+}
+
+
+/* Checkout Success Pop-up */
+.review-popup {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--primary-color);
+    color: var(--text-color);
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 1000;
+}
+
+.review-popup i {
+    font-size: 20px;
+    color: var(--success-color);
+}
+
+/* Active Category Button */
+.category-btn.active {
+    background: linear-gradient(90deg, rgba(6, 6, 6, 0.5), var(--accent-color));
+    color: var(--text-color);
+    box-shadow: 0px 4px 10px var(--accent-color);
+    transform: scale(var(--button-hover-scale));
+}
+
+/* Payment Modal */
+.payment-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+/* Payment Box */
+.payment-box {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    max-width: 600px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative; /* For positioning close button */
+    color: #003366;;
+}
+
+/* Close Button */
+.close-btn {
+    position: absolute;
+    top: 0.05px;
+    right: 10px;
+    font-size: 2rem;
+    color: lightgray;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close-btn:hover {
+    color: #e1bf15; /* Yellow color on hover */
+}
+
+/* Payment Methods */
+.payment-methods {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+/* Payment Options */
+.payment-options {
+    display: flex;
+    flex-direction: column; /* Align radio buttons vertically */
+    gap: 1rem; /* Space between each radio button */
+    align-items: flex-start; /* Align left */
+}
+
+/* Payment Options Label */
+.payment-options label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    background: none; /* Removes the background */
+    -webkit-background-clip: text; /* Makes the gradient apply to text */
+    background-clip: text; /* For non-WebKit browsers */
+    color: transparent; /* Makes the text transparent to show gradient */
+    background-image: linear-gradient(90deg, rgba(6, 6, 6, 0.5), rgba(0, 74, 173, 0.5)); /* Gradient applied to text */
+}
+
+/* Icon size */
+.payment-options label i {
+    font-size: 1.5rem;
+}
+
+/* Hover effect */
+.payment-options label:hover {
+    background-image: linear-gradient(90deg, rgba(6, 6, 6, 0.5), #e1bf15); /* Gradient changes to yellow on hover */
+    color: transparent; /* Keeps the text transparent for gradient effect */
+}
+
+/* Style for radio buttons */
+.payment-options input[type="radio"] {
+    margin-right: 0.5rem; /* Space between radio button and text */
+}
+
+/* Confirm Button */
+.confirm-btn {
+    background: linear-gradient(90deg, rgba(6, 6, 6, 0.5), rgba(0, 74, 173, 0.5));
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 20px;
+}
+
+.confirm-btn:hover {
+    color: #e1bf15;
+}
+
+/* Payment Title */
+#payment h3 {
+    color: #003366;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.section-title {
+    text-align: center;
+    color: #003366;
+    margin-top: 120px; 
+}
+
+.section-title::after {
+    content: "";
+    display: block;
+    width: 150px; 
+    height: 4px; 
+    margin: 8px auto 0; 
+    background: linear-gradient(90deg, rgba(6, 6, 6, 0.5), rgba(0, 74, 173, 0.5));
+    border-radius: 2px;
+    margin-bottom: 20px;
+}

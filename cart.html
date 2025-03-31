@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/CSS/cart.css">
+    <link rel="stylesheet" href="/CSS/navbar.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="py-3 navbar navbar-expand-lg fixed-top auto-hiding-navbar">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <img src="/Images/poke.png" alt="logo">
+        </a>
+
+        <button class="navbar-toggler ml-auto custom-toggler" 
+                type="button" 
+                data-bs-toggle="collapse" 
+                data-bs-target="#nav3">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="navbar-collapse collapse" id="nav3">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="home.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="store.html">Shop</a></li>
+                <li class="nav-item"><a class="nav-link" href="cart.html">Cart</a></li>
+                <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="https://nianticlabs.com/terms">Contact Us</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fa-solid fa-user"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="profile.html"><i class="fas fa-user-circle"></i> View Profile</a></li>
+                        <li><a class="dropdown-item" href="#"><i class="fas fa-cog"></i> Settings & Privacy</a></li>
+                        <li><a class="dropdown-item" href="#"><i class="fas fa-question-circle"></i> Help & Support</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="login.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- END NAVBAR -->
+
+<div class="container mt-5">
+    <h2 class="section-title text-center">Shopping Cart</h2>
+
+    <div id="cart-items" class="mt-4"></div>
+
+    <!-- Total Price Display -->
+    <div class="total-container text-center mt-4">
+        <h4>Total: ₱ <span id="total-price">0.00</span></h4>
+    </div>
+
+    <div class="text-center mt-4">
+        <button id="checkout-btn" class="btn btn-success">Proceed to Checkout</button>
+    </div>
+</div>
+
+<!-- Payment Pop-up -->
+<div id="payment-modal" class="payment-modal">
+    <div class="payment-box">
+        <span id="close-modal" class="close-btn">&times;</span>
+        <h3>Choose Payment Method</h3>
+        <div class="payment-methods">
+            <div class="payment-options">
+                <label><input type="radio" name="payment" value="credit-card"> <i class="fab fa-cc-visa"></i> Visa</label>
+                <label><input type="radio" name="payment" value="mastercard"> <i class="fab fa-cc-mastercard"></i> MasterCard</label>
+                <label><input type="radio" name="payment" value="paypal"> <i class="fab fa-cc-paypal"></i> PayPal</label>
+                <label><input type="radio" name="payment" value="gcash"> <i class="fas fa-wallet"></i> E-wallet</label>
+            </div>
+        </div>
+        <button id="confirm-payment" class="confirm-btn">Confirm Payment</button>
+    </div>
+</div>
+
+<!-- Footer -->
+<div id="footer"></div>
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+<script src="/JAVASCRIPT/script_auth.js"></script>
+<script src="/JAVASCRIPT/script.js"></script>
+<script src="/JAVASCRIPT/cart.js"></script>
+</body>
+</html>

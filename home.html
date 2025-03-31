@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TECHOOD PokemonGo Store</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/CSS/home.css">
+    <link rel="stylesheet" href="/CSS/navbar.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="py-3 navbar navbar-expand-lg fixed-top auto-hiding-navbar">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <img src="/Images/poke.png" alt="logo">
+        </a>
+
+        <button class="navbar-toggler ml-auto custom-toggler" 
+                type="button" 
+                data-bs-toggle="collapse" 
+                data-bs-target="#nav3">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="navbar-collapse collapse" id="nav3">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="home.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="store.html">Shop</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="cart.html">Cart</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://nianticlabs.com/terms?fbclid=IwZXh0bgNhZW0CMTEAAR1JdofnX3ztzHR5348hkGDCw7dF10MFk-__AX3MiEmQHZelrMgLhmQiXIg_aem_9Ac8iTAmQGycOQWd9Dojpg">Contact Us</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fa-solid fa-user"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="profile.html" id="viewProfile"><i class="fas fa-user-circle"></i> View Profile</a></li>
+                        <li><a class="dropdown-item" href="#"><i class="fas fa-cog"></i> Settings & Privacy</a></li>
+                        <li><a class="dropdown-item" href="#"><i class="fas fa-question-circle"></i> Help & Support</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="login.html" id="logout"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- END NAVBAR -->
+
+<!--HOME-->
+<section id="home">
+    <div class="carousel-container">
+        <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="/Images/BG2.png" class="d-block w-100" alt="BG1">
+                </div>
+                <div class="carousel-item">
+                    <img src="/Images/BG3.png" class="d-block w-100" alt="BG2">
+                </div>
+                <div class="carousel-item">
+                    <img src="/Images/BG4.png" class="d-block w-100" alt="BG3">
+                </div>
+                <div class="carousel-item">
+                    <img src="/Images/BG1.png" class="d-block w-100" alt="BG4">
+                </div>
+            </div>
+
+            <!-- Controls and Indicators Container -->
+            <div class="carousel-controls">
+                <!-- Previous Button -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+
+                <!-- Indicators -->
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                </div>
+
+                <!-- Next Button -->
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+<!--END OF HOME-->
+
+<!--PRODUCTS-->
+<section id="products">
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">SHOP</h1>
+        <br>
+        <div class="row justify-content-center">
+            
+            <div class="container">
+                <div class="card__container">
+                   <article class="card__article card-1">
+                       <img src="/Images/P1.png" alt="image" class="card__img">
+                       <div class="card__data">
+                           <h2 class="card__title">Item Boxes</h2>
+                           <a href="store.html" class="card-btn">View</a>
+                       </div>
+                   </article>
+                   
+                   <article class="card__article card-2">
+                       <img src="/Images/P2.png" alt="image" class="card__img">
+                       <div class="card__data">
+                           <h2 class="card__title">PokéCoins</h2>
+                           <a href="store.html" class="card-btn">View</a>
+                       </div>
+                   </article>
+                   
+                   <article class="card__article card-3">
+                       <img src="/Images/P3.png" alt="image" class="card__img">
+                       <div class="card__data">
+                           <h2 class="card__title">Daily Bundles</h2>
+                           <a href="store.html" class="card-btn">View</a>
+                       </div>
+                   </article>            
+                </div>
+             </div>
+        </div>
+
+        <!-- View All Button -->
+        <div class="text-center mt-4">
+            <a href="store.html" class="btn view-all-btn">View All</a>
+        </div>
+
+    </div>
+</section>
+<!--END OF PRODUCTS-->
+
+<!-- ABOUT US -->
+<section id="about">
+    <div class="container">
+        <h1 class="text-center mb-2">Get Up and GO!</h1>
+        <div class="row align-items-center">
+            <div class="col-lg-6 col-md-12 text-center position-relative">
+                <div class="about-image-wrapper">
+                    <img src="/Images/BG6.jpg" alt="About Us" class="img-fluid w-100 about-image">
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-12 text-col d-flex flex-column align-items-md-start align-items-center text-center text-md-start fade-in">
+                <p>
+                    Join Trainers across the globe who are discovering Pokémon as they explore the world around them. Pokémon GO is the global gaming sensation that has been downloaded over 1 billion times and named “Best Mobile Game” by the Game Developers Choice Awards and “Best App of the Year” by TechCrunch.
+                </p>
+                <div class="d-flex gap-3 mt-2">
+                    <a href="https://play.google.com/store/search?q=pokemon%20go&c=apps" class="btn-store">
+                        <i class="fab fa-google-play"></i> Google Play
+                    </a>
+                    <a href="https://apps.apple.com/ph/app/pok%C3%A9mon-go/id1094591345" class="btn-store">
+                        <i class="fab fa-app-store"></i> App Store
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- END OF ABOUT US --> 
+
+<!-- Footer -->
+<div id="footer"></div>
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+<script src="/JAVASCRIPT/script_auth.js"></script>
+<script src="/JAVASCRIPT/script.js"></script>
+</body>
+</html>

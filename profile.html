@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/CSS/profile.css">
+    <link rel="stylesheet" href="/CSS/navbar.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="py-3 navbar navbar-expand-lg fixed-top auto-hiding-navbar">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <img src="/Images/poke.png" alt="logo">
+        </a>
+
+        <button class="navbar-toggler ml-auto custom-toggler" 
+                type="button" 
+                data-bs-toggle="collapse" 
+                data-bs-target="#nav3">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="navbar-collapse collapse" id="nav3">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="home.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="store.html">Shop</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="cart.html">Cart</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://nianticlabs.com/terms?fbclid=IwZXh0bgNhZW0CMTEAAR1JdofnX3ztzHR5348hkGDCw7dF10MFk-__AX3MiEmQHZelrMgLhmQiXIg_aem_9Ac8iTAmQGycOQWd9Dojpg">Contact Us</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fa-solid fa-user"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="profile.html" id="viewProfile"><i class="fas fa-user-circle"></i> View Profile</a></li>
+                        <li><a class="dropdown-item" href="#"><i class="fas fa-cog"></i> Settings & Privacy</a></li>
+                        <li><a class="dropdown-item" href="#"><i class="fas fa-question-circle"></i> Help & Support</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="login.html" id="logout"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- END NAVBAR -->
+
+<!-- PROFILE -->
+<div class="profile-header">
+    <h1 class="text-center mb-2">User Profile</h1>
+</div>
+<div class="profile-container">
+    <div class="profile-info-container">
+        <div class="profile-info">
+            <img src="/Images/user.png" alt="Profile Picture" class="profile-picture">
+            <h3>Alex Hulip</h3>
+            
+        <!-- Game Info Section with all details -->
+        <div class="game-info">
+            <div class="info-row">
+                <i class="fas fa-envelope"></i>
+                <span class="info-label">Email:</span>
+                <span class="info-value">hulipalessandra@gmail.com</span>
+            </div>
+            <div class="info-row">
+                <i class="fas fa-gamepad"></i>
+                <span class="info-label">IGN:</span>
+                <span class="info-value">PokeMaster</span>
+            </div>
+            <div class="info-row">
+                <i class="fas fa-id-card"></i>
+                <span class="info-label">Player ID:</span>
+                <span class="info-value">8868 4451 7906</span>
+            </div>
+        </div>
+            
+            <button class="edit-profile-btn"><i class="fas fa-user-edit me-2"></i>Edit Profile</button>
+        </div>
+    </div>
+    
+    <div class="list-container">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+                <i class="fas fa-heart me-2"></i>Favorites
+            </li>
+            <li class="list-group-item">
+                <i class="fas fa-paint-brush me-2"></i>Theme
+            </li>
+            <li class="list-group-item">
+                <a href="transaction.html" id="transaction-item"><i class="fa-solid fa-money-check-dollar"></i>Transactions</a>
+            </li>
+            <li class="list-group-item">
+                <i class="fas fa-moon me-2"></i>Dark Mode
+            </li>
+            <li class="list-group-item">
+                <i class="fas fa-cog me-2"></i>Settings
+            </li>
+            <li class="list-group-item">
+                <i class="fas fa-info-circle me-2"></i>About Us
+            </li>
+            <li class="list-group-item">
+                <i class="fas fa-history me-2"></i>Clear History
+            </li>
+            <li class="list-group-item">
+                <i class="fas fa-flag me-2"></i>Report a Problem
+            </li>
+            <li class="list-group-item">
+                <a href="login.html" id="logout-item"><i class="fas fa-sign-out-alt me-2"></i>Log Out</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<!-- Pop-up Notification -->
+<div id="review-popup" class="review-popup">
+</div>
+ 
+<!-- Footer -->
+<div id="footer"></div>
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+<script src="/JAVASCRIPT/script_auth.js"></script>
+<script src="/JAVASCRIPT/profile.js"></script>
+<script src="/JAVASCRIPT/script.js"></script>
+</body>
+</html>
