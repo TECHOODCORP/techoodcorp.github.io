@@ -222,7 +222,7 @@ form .btn:hover {
 
     body {
         background: 
-            url("HOME.svg") no-repeat center center/cover,
+            url("/Images/HOME.svg") no-repeat center center/cover,
             linear-gradient(to bottom, transparent 85%, white 85%);
         align-items: center;
     }
