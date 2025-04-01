@@ -31,42 +31,54 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const productGrid = document.getElementById("product-grid");
     const categoryButtons = document.querySelectorAll(".category-btn");
-
+ 
+    function getCategoryFromURL() {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get("category") || "All Products";
+    }
+ 
+    function setActiveCategory(category) {
+        categoryButtons.forEach(button => {
+            button.classList.remove("active");
+            if (button.textContent.trim() === category) {
+                button.classList.add("active");
+            }
+        });
+    }
+ 
     function renderProducts(filterCategory = "All Products") {
-        productGrid.innerHTML = ""; // Clear grid before adding products
-
-        const filteredProducts = filterCategory === "All Products"
-            ? products
-            : products.filter(product => product.category === filterCategory);
-
+        productGrid.innerHTML = "";
+        const filteredProducts = filterCategory === "All Products" ? products : products.filter(product => product.category === filterCategory);
         filteredProducts.forEach(product => {
             const productHTML = `
-                <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-                    <div class="card product-card">
-                        <div class="product-img">
-                            <img src="./assets/items/${product.img}" class="main-img" alt="${product.name}">
-                            <img src="./assets/items/${product.hoverImg}" class="hover-img" alt="${product.name} Inclusions">
-                        </div>
-                        <div class="card-body">
-                            <h5 class="card-title">${product.name}</h5>
-                            <p class="card-text price">${product.price}</p>
-                            <a href="order.html?name=${encodeURIComponent(product.name)}&price=${encodeURIComponent(product.price)}&img=${encodeURIComponent(product.img)}&hoverImg=${encodeURIComponent(product.hoverImg)}" class="btn add-to-cart">Add To Cart</a>
-                        </div>
-                    </div>
-                </div>
-            `;
+<div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+<div class="card product-card">
+<div class="product-img">
+<img src="./assets/items/${product.img}" class="main-img" alt="${product.name}">
+<img src="./assets/items/${product.hoverImg}" class="hover-img" alt="${product.name} Inclusions">
+</div>
+<div class="card-body">
+<h5 class="card-title">${product.name}</h5>
+<p class="card-text price">${product.price}</p>
+<a href="order.html?name=${encodeURIComponent(product.name)}&price=${encodeURIComponent(product.price)}&img=${encodeURIComponent(product.img)}&hoverImg=${encodeURIComponent(product.hoverImg)}" class="btn add-to-cart">Add To Cart</a>
+</div>
+</div>
+</div>`;
             productGrid.innerHTML += productHTML;
         });
     }
-
-    renderProducts(); // Initial render of all products
-
+ 
+    const currentCategory = getCategoryFromURL();
+    renderProducts(currentCategory);
+    setActiveCategory(currentCategory);
+ 
     categoryButtons.forEach(button => {
         button.addEventListener("click", function () {
+            const selectedCategory = this.textContent.trim();
             categoryButtons.forEach(btn => btn.classList.remove("active"));
             this.classList.add("active");
-
-            renderProducts(this.textContent.trim());
+            renderProducts(selectedCategory);
+            history.replaceState(null, "", `?category=${encodeURIComponent(selectedCategory)}`);
         });
     });
 });
