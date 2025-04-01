@@ -148,7 +148,7 @@
 
 @media screen and (max-width: 480px) {
     .carousel-control-prev {
-        left: 150px;
+        left: 50px;
     }
     .carousel-control-next {
         right: 50px;
